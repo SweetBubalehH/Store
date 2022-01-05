@@ -1,0 +1,52 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+
+<div class="row">
+	<div class="col">
+		{% if expire %}
+		<u1 class="list-group">
+			{% for computer in expire %}
+				<li class="list-group-item ">
+		<div class="p-3 mb-2 bg-light text-dark">	<table>	<tr><td>
+					<img src="{% if computer.image %}{{ computer.image.url }}{% else %}{% static "img/no_image.jpg" %}{% endif %}"  width="150" height="150">
+					</td><td>	<h3> 
+							<a class="query" href="{% url 'computer:computer-detail' computer.id %}">{{ computer.name }}</a>
+						Цена:	${{ computer.price }}
+					</td>	</h3>
+					
+				</tr>
+			</table>
+			</div>
+				</li>
+				
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>Компьютеры не найдены.</p>
+
+{% endif %}
+<div id="myModalBox" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Заголовок модального окна -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <!-- Основное содержимое модального окна -->
+      <div class="modal-body">
+        Товар добавлен в корзину
+      </div>
+      <!-- Футер модального окна -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+{% endblock main %}

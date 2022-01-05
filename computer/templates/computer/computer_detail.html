@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+
+<h2>{{ product.name }}</h2>
+    <ul>     
+            <li>	
+					<img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.jpg" %}{% endif %}"  width="150" height="150">
+					       
+                {{ product.name }}<br>
+				{{ product.description }}
+				<p class="price">${{ product.price }}</p>
+					<form action="{% url 'cart:cart' product_id=product.id %}" method="post">
+					{{ cart_product_form }}
+					{% csrf_token %}
+					<input type="submit" class="btn btn-outline-dark" value="Добавить в корзину">
+</form>
+            </li>
+			
+    </ul>
+
+
+
+
+{% endblock main %}

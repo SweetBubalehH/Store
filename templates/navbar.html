@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<a class="navbar-brand" href="{% url 'catalog:cat'  %} ">Домой</a>
+	<button class="navbar-toggler" type ="button" data-toggle = "collapse" 
+	data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+	aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	<ul class="navbar-nav mr-4">
+		
+		<li class="nav-item">
+			<a class="nav-link" href="/computer">ПК и ноутбуки</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="{% url 'computer:printer'  %} ">Принтеры и МФУ</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#">Телефоны</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/cart">Корзина</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/admin">Admin</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#">About</a>
+		</li>
+		<li>
+		<input class="form-control" type="text" placeholder="Default input">
+		</li>
+		<li><li>
+		  <button type="button" class="btn btn-outline-light">  Поиск</button>
+		</li>
+		</li>
+	</ul>
+	
+</div>
+</nav>

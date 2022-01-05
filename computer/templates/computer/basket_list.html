@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+
+		{% if object_list %}
+		<ul class="list-group">
+			{% for basket in object_list %}
+				
+				<li class="list-group-item ">
+					
+						{{ basket.name }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p> Покупки не найдены.</p>
+
+{% endif %}
+
+{% endblock main %}
